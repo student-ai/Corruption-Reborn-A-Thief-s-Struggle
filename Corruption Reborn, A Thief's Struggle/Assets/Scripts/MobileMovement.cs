@@ -21,7 +21,6 @@ public class MobileMovement : MonoBehaviour
     {
         Vector2 moveDir = moveActionReference.action.ReadValue<Vector2>();
         rb.linearVelocity = moveDir * moveSpeed;
-        Debug.Log(moveDir);
     }
 
 }
