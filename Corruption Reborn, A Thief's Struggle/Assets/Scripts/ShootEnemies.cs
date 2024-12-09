@@ -24,13 +24,10 @@ public class ShootEnemies : MonoBehaviour
 
     void Update()
     {
-        GameObject target = null;
         timer += Time.deltaTime;
-        // find enemies on the screen
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        // for every enemy, find their position and save it (maybe in a list?)
-        // and for now, debug it to show the code works
+        GameObject target = null;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         for(int i = 0; i < enemies.Length; i++)
         {
             Vector2 playerPos = player.transform.position;
@@ -43,18 +40,27 @@ public class ShootEnemies : MonoBehaviour
             {
                 target = enemies[i];
                 dist = enemyDist;
+                Debug.Log("Closest enemy is at " + target.transform.position);
+            }
+            if (timer > shootDelay && Time.timeScale == 1)
+            {
+                timer = 0;
+                // Fire a projectile in a straight line to the last known position of the closest enemy
+                // spawn in the bullet
+                Vector2 shootDir = target.transform.position - transform.position;
+                GameObject bullet = Instantiate(bulletprefab, transform.position, Quaternion.identity);
+                bullet.GetComponent<Rigidbody2D>().linearVelocity = shootDir * shootSpeed;
+                Destroy(bullet,bulletLifetime);
+
+                Debug.Log("Should have fired towards " + target.transform.position);
             }
         }
-        if (timer > shootDelay && Time.timeScale == 10)
-        {
-            timer = 0;
-            // Fire a projectile in a straight line to the last known position of the closest enemy
-            // spawn in the bullet
-            GameObject bullet = Instantiate(bulletprefab, transform.position, Quaternion.identity);
-            //bullet.GetComponent<Rigidbody2D>().linearVelocity = ___ * shootSpeed;
-            Destroy(bullet,bulletLifetime);
-        }
+        // find enemies on the screen
+
+        // for every enemy, find their position and save it (maybe in a list?)
+        // and for now, debug it to show the code works
     }
+
 }
 
 

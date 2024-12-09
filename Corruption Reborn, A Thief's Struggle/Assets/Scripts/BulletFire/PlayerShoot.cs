@@ -25,11 +25,21 @@ public class PlayerShoot : MonoBehaviour
             Vector3 mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             mousePos.z = 0;
+
+            Debug.Log( "Fired towards " + mousePos);
+
             mousePos = mousePos - transform.position;
             mousePos.Normalize();
             //spawn in the bullet
-            GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
+
+            GameObject bulletPrefab = prefab;
+
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().linearVelocity = mousePos * shootSpeed;
+
+            Vector2 bulletPos = bullet.transform.position;
+            Debug.Log(bulletPos);
+
             Destroy(bullet, bulletLifetime);
             //Debug.Log(mousePos);
         }
