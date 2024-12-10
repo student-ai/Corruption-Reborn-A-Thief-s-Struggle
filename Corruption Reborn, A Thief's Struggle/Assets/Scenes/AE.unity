@@ -270,10 +270,9 @@ GameObject:
   - component: {fileID: 267929220}
   - component: {fileID: 267929219}
   - component: {fileID: 267929218}
-  - component: {fileID: 267929217}
-  - component: {fileID: 267929223}
-  - component: {fileID: 267929224}
   - component: {fileID: 267929225}
+  - component: {fileID: 267929224}
+  - component: {fileID: 267929226}
   m_Layer: 0
   m_Name: PlayerStandin
   m_TagString: Player
@@ -297,23 +296,6 @@ Transform:
   - {fileID: 189346023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &267929217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267929215}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecde3d3bb662ca5428c20cabf9ac2a7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 267929215}
-  bulletprefab: {fileID: 7468538458182788731, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-  shootSpeed: 3
-  bulletLifetime: 2
-  shootDelay: 0.2
 --- !u!114 &267929218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +446,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0.8484955, b: 1, a: 1}
   m_FlipX: 0
@@ -476,22 +458,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &267929223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267929215}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dedc3237c730d64b97ab18eb57f4a82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 7468538458182788731, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-  shootSpeed: 10
-  bulletLifetime: 40
-  shootDelay: 0.5
 --- !u!114 &267929224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,7 +465,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267929215}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62f067f6afea15541976b086e53bc8ad, type: 3}
   m_Name: 
@@ -520,8 +486,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9393cd4b985bd804ca4d13e34b6e9e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 10000
   levelToLoad: AE
+--- !u!114 &267929226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267929215}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a0d90f05473774db9d5c604fcd46f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletprefab: {fileID: 7468538458182788731, guid: a774d610fa8236842992f7df6d512c57, type: 3}
+  shootSpeed: 10
+  bulletLifetime: 2
+  shootDelay: 0.5
+  Radnum: 0
 --- !u!1 &319845620
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,8 +655,8 @@ MonoBehaviour:
   - {fileID: 404601514}
   - {fileID: 1519480606}
   - {fileID: 1242362307}
-  detectionRange: 0
-  chaseRange: 0
+  detectionRange: 5
+  chaseRange: 7
   player: {fileID: 267929216}
   speed: 2
 --- !u!58 &385272762
@@ -904,8 +887,8 @@ MonoBehaviour:
   - {fileID: 1778863154}
   - {fileID: 404601514}
   - {fileID: 1519480606}
-  detectionRange: 0
-  chaseRange: 0
+  detectionRange: 5
+  chaseRange: 7
   player: {fileID: 267929216}
   speed: 2
 --- !u!58 &464819739
@@ -1247,63 +1230,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &1071911974
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.5195204
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.657317
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304928851828855453, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7468538458182788731, guid: a774d610fa8236842992f7df6d512c57, type: 3}
-      propertyPath: m_Name
-      value: New P.Bullet
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a774d610fa8236842992f7df6d512c57, type: 3}
 --- !u!1 &1228979574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,8 +1269,8 @@ MonoBehaviour:
   - {fileID: 1242362307}
   - {fileID: 1778863154}
   - {fileID: 404601514}
-  detectionRange: 0
-  chaseRange: 0
+  detectionRange: 5
+  chaseRange: 7
   player: {fileID: 267929216}
   speed: 2
 --- !u!58 &1228979576
@@ -1724,8 +1650,8 @@ MonoBehaviour:
   - {fileID: 1519480606}
   - {fileID: 1242362307}
   - {fileID: 1778863154}
-  detectionRange: 0
-  chaseRange: 0
+  detectionRange: 5
+  chaseRange: 7
   player: {fileID: 267929216}
   speed: 2
 --- !u!58 &1937784088
@@ -1899,4 +1825,3 @@ SceneRoots:
   - {fileID: 385272765}
   - {fileID: 1937784091}
   - {fileID: 1228979579}
-  - {fileID: 1071911974}
