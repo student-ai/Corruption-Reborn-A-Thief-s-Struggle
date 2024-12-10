@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 267929217}
   - component: {fileID: 267929223}
   - component: {fileID: 267929224}
+  - component: {fileID: 267929225}
   m_Layer: 0
   m_Name: PlayerStandin
   m_TagString: Player
@@ -507,6 +508,20 @@ MonoBehaviour:
   shootSpeed: 10
   bulletLifetime: 2
   shootDelay: 0.5
+--- !u!114 &267929225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267929215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9393cd4b985bd804ca4d13e34b6e9e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  levelToLoad: AE
 --- !u!1 &319845620
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +647,7 @@ GameObject:
   - component: {fileID: 385272762}
   - component: {fileID: 385272761}
   - component: {fileID: 385272766}
+  - component: {fileID: 385272767}
   m_Layer: 0
   m_Name: Test Enemy (1)
   m_TagString: Enemy
@@ -805,6 +821,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3b013fc628fe04689e4e2942f4fc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &385272767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385272760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970b7dc0ea3569843b4d991952acfe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!1 &404601513
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +879,7 @@ GameObject:
   - component: {fileID: 464819739}
   - component: {fileID: 464819738}
   - component: {fileID: 464819743}
+  - component: {fileID: 464819744}
   m_Layer: 0
   m_Name: Test Enemy (0)
   m_TagString: Enemy
@@ -1023,6 +1053,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3b013fc628fe04689e4e2942f4fc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &464819744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464819737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970b7dc0ea3569843b4d991952acfe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!1 &749419729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,6 +1318,7 @@ GameObject:
   - component: {fileID: 1228979576}
   - component: {fileID: 1228979575}
   - component: {fileID: 1228979580}
+  - component: {fileID: 1228979581}
   m_Layer: 0
   m_Name: Test Enemy (3)
   m_TagString: Enemy
@@ -1448,6 +1492,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3b013fc628fe04689e4e2942f4fc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1228979581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228979574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970b7dc0ea3569843b4d991952acfe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!1 &1242362306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1699,7 @@ GameObject:
   - component: {fileID: 1937784088}
   - component: {fileID: 1937784087}
   - component: {fileID: 1937784092}
+  - component: {fileID: 1937784093}
   m_Layer: 0
   m_Name: Test Enemy (2)
   m_TagString: Enemy
@@ -1815,6 +1873,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3b013fc628fe04689e4e2942f4fc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1937784093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937784086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970b7dc0ea3569843b4d991952acfe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
