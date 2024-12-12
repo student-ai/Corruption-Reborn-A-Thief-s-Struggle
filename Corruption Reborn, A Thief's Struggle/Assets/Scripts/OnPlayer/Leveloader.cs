@@ -11,6 +11,8 @@ public class Leveloader : MonoBehaviour
     string nextLevel;
 
     public countdownTimer countdown;
+
+    public DropdownSelectionChecker FindSelectedDifficulty;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +30,8 @@ public class Leveloader : MonoBehaviour
         {
             SceneManager.LoadScene(nextLevel);
         }
+
+        Debug.Log("Selected Difficulty: " + FindSelectedDifficulty.difficulty);
     }
 
 
