@@ -29,7 +29,7 @@ public class ShootRandom : MonoBehaviour
         GameObject[] allenemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject randomEnemy = null;
 
-        if (timer > shootDelay)
+        if (timer > shootDelay && Time.timeScale == 1)
         {
             timer = 0;
 
@@ -39,6 +39,7 @@ public class ShootRandom : MonoBehaviour
 
             ///Use that random number to pick a randm enemy
             randomEnemy = allenemies[Radnum];
+            Debug.DrawLine(this.transform.position, randomEnemy.transform.position);
             Vector2 enemyPos = randomEnemy.transform.position - this.transform.position;
             enemyPos.Normalize();
             GameObject bullet = Instantiate(bulletprefab, this.transform.position, Quaternion.identity);
