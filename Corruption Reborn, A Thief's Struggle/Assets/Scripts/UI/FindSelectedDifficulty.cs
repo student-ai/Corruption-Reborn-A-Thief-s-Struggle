@@ -6,7 +6,7 @@ public class DropdownSelectionChecker : MonoBehaviour
 {
     // Reference to the Dropdown component
     // If using TMP, use TMP_Dropdown
-    [SerializeField] 
+    [SerializeField]
     private TMP_Dropdown dropdown; 
 
     public int difficulty = 0;

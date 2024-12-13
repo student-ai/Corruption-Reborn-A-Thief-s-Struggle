@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    public GameManagerScript findselecteddifficulty;
     GameObject player;
-    [SerializeField]
-    float chaseSpeed = 10f;
+    float chaseSpeed;
     [SerializeField]
     float chaseTriggerDistance = 5.0f;
     [SerializeField]
@@ -16,6 +16,12 @@ public class EnemyAI : MonoBehaviour
     float timer = 0;
     [SerializeField]
     float returnDelay = 0f;
+    [SerializeField]
+    float easy_chaseSpeed = 5f;
+    [SerializeField]
+    float medium_chaseSpeed = 10f;
+    [SerializeField]
+    float hard_chaseSpeed = 15f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +32,20 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (findselecteddifficulty.difficulty == 0)
+        {
+            chaseSpeed = easy_chaseSpeed;
+        }
+        if (findselecteddifficulty.difficulty == 1)
+        {
+            chaseSpeed = medium_chaseSpeed;
+        }
+        if (findselecteddifficulty.difficulty == 2)
+        {
+            chaseSpeed = hard_chaseSpeed;
+        }
+
+
         timer += Time.deltaTime;
         // If the player gets too close
         Vector3 playerPosition = player.transform.position;
