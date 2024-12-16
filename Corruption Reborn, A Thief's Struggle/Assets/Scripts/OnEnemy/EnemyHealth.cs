@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public GameManagerScript findselecteddifficulty;
     [SerializeField]
     float easy_health = 3;
     [SerializeField]
@@ -16,39 +15,45 @@ public class EnemyHealth : MonoBehaviour
     /// Image healthBar;
     /// </summary>
     float maxHealth;
+    public GameObject GameManager;
+    public DropdownSelectionChecker difffinder;
     // Start is called before the first frame update
     void Start()
     {
 
         ///healthBar = GetComponentsInChildren<Image>()[1] ;
         ///healthBar.fillAmount = health / maxHealth;
-    }
+        ///
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
+        difffinder = Object.FindAnyObjectByType<DropdownSelectionChecker>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (findselecteddifficulty.difficulty == 0)
+        if (difffinder.difficulty == 0)
         {
             maxHealth = easy_health;
         }
-        if (findselecteddifficulty.difficulty == 1)
+        if (difffinder.difficulty == 1)
         {
             maxHealth = medium_health;
         }
-        if (findselecteddifficulty.difficulty == 2)
+        if (difffinder.difficulty == 2)
         {
             maxHealth = hard_health;
         }
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        float health = maxHealth;   
         if(collision.gameObject.tag == "PlayerBullet")
         {
-            health -= 1;
+            maxHealth -= 1;
             ///healthBar.fillAmount = health / maxHealth;
-            if (health <= 0)
+            if (maxHealth <= 0)
             {
                 Destroy(gameObject);
             }

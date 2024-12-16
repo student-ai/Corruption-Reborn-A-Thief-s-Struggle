@@ -31,7 +31,7 @@ public class Leveloader : MonoBehaviour
             SceneManager.LoadScene(nextLevel);
         }
 
-        Debug.Log("Selected Difficulty: " + FindSelectedDifficulty.difficulty);
+        
     }
 
 

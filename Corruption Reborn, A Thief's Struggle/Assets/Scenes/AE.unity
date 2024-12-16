@@ -514,7 +514,7 @@ MonoBehaviour:
   bulletprefab: {fileID: 7468538458182788731, guid: a774d610fa8236842992f7df6d512c57, type: 3}
   shootSpeed: 10
   bulletLifetime: 2
-  shootDelay: 0.2
+  shootDelay: 1
 --- !u!114 &267929225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,7 +688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &400138026
 Transform:
   m_ObjectHideFlags: 0
@@ -717,8 +717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1752652913384811178, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
-  _minimumSpawnTime: 1
-  _maximumSpawnTime: 5
+  _minimumSpawnTime: 5
+  _maximumSpawnTime: 10
 --- !u!1 &404601513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb77eeae5034454e9fa85f16a3b7e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difffinder: {fileID: 1052704774}
+  difficulty: 0
 --- !u!1 &1052704768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1279928020
 Transform:
   m_ObjectHideFlags: 0
@@ -1585,8 +1587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1752652913384811178, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
-  _minimumSpawnTime: 1
-  _maximumSpawnTime: 5
+  _minimumSpawnTime: 5
+  _maximumSpawnTime: 10
 --- !u!1 &1312142101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,7 +2005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1709362117
 Transform:
   m_ObjectHideFlags: 0
@@ -2032,8 +2034,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1752652913384811178, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
-  _minimumSpawnTime: 1
-  _maximumSpawnTime: 5
+  _minimumSpawnTime: 5
+  _maximumSpawnTime: 10
 --- !u!1 &1714945009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,7 +2317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1873990105
 Transform:
   m_ObjectHideFlags: 0
@@ -2344,8 +2346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1752652913384811178, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
-  _minimumSpawnTime: 1
-  _maximumSpawnTime: 5
+  _minimumSpawnTime: 5
+  _maximumSpawnTime: 10
 --- !u!1 &1900787240
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,9 +2637,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4183339979200972056, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
+      propertyPath: difffinder
+      value: 
+      objectReference: {fileID: 1052704774}
+    - target: {fileID: -4183339979200972056, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 942231739}
+    - target: {fileID: -4183339979200972056, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
       propertyPath: findselecteddifficulty
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 942231742}
     - target: {fileID: 43910240022357167, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.645514
@@ -2683,9 +2693,17 @@ PrefabInstance:
       value: Basic_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2628589102213282400, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
+      propertyPath: difffinder
+      value: 
+      objectReference: {fileID: 1052704774}
+    - target: {fileID: 2628589102213282400, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 942231739}
+    - target: {fileID: 2628589102213282400, guid: 9551a0079d4f22a4bb0fb8cebd76e21e, type: 3}
       propertyPath: findselecteddifficulty
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 942231742}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

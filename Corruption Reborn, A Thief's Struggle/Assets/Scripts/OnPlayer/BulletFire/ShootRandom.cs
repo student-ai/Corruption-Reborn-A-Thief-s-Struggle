@@ -35,7 +35,6 @@ public class ShootRandom : MonoBehaviour
 
             ///Generate a random number
             Radnum = Random.Range(0, allenemies.Length);
-            Debug.Log(Radnum);
 
             ///Use that random number to pick a randm enemy
             randomEnemy = allenemies[Radnum];

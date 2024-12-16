@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public GameManagerScript findselecteddifficulty;
     GameObject player;
     float chaseSpeed;
     [SerializeField]
@@ -22,25 +21,30 @@ public class EnemyAI : MonoBehaviour
     float medium_chaseSpeed = 10f;
     [SerializeField]
     float hard_chaseSpeed = 15f;
+    public GameObject GameManager;
+    public DropdownSelectionChecker difffinder;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         home = transform.position;
+
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
+        difffinder = Object.FindAnyObjectByType<DropdownSelectionChecker>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (findselecteddifficulty.difficulty == 0)
+        if (difffinder.difficulty == 0)
         {
             chaseSpeed = easy_chaseSpeed;
         }
-        if (findselecteddifficulty.difficulty == 1)
+        if (difffinder.difficulty == 1)
         {
             chaseSpeed = medium_chaseSpeed;
         }
-        if (findselecteddifficulty.difficulty == 2)
+        if (difffinder.difficulty == 2)
         {
             chaseSpeed = hard_chaseSpeed;
         }
@@ -58,23 +62,23 @@ public class EnemyAI : MonoBehaviour
             // Move in the direction of the player
             timer = 0;
             chaseDir.Normalize();
-            GetComponent<Rigidbody2D>().velocity = chaseDir * chaseSpeed;
+            GetComponent<Rigidbody2D>().linearVelocity = chaseDir * chaseSpeed;
         }
         else if (returnHome && homeDir.magnitude > 0.2f)
         {
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
             // Return home
             if (timer > returnDelay)
             {
                 homeDir.Normalize();
-                GetComponent<Rigidbody2D>().velocity = homeDir * chaseSpeed;
+                GetComponent<Rigidbody2D>().linearVelocity = homeDir * chaseSpeed;
 
             }
         }
         else
         {
             // If the player is not close & we're not trying to return home, stop moving
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
         }
     }
 }

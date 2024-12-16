@@ -24,10 +24,10 @@ public class FromTheCat : MonoBehaviour
     void FindClosestEnemy()
     {
         float distanceToClosestEnemy = Mathf.Infinity;
-        Enemy closestEnemy = null;
-        Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
+        GameObject closestEnemy = null;
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         
-        foreach (Enemy currentEnemy in allEnemies)
+        foreach (GameObject currentEnemy in allEnemies)
         {
             float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
             if (distanceToEnemy < distanceToClosestEnemy)
