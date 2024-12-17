@@ -12,7 +12,6 @@ public class Leveloader : MonoBehaviour
 
     public countdownTimer countdown;
 
-    public DropdownSelectionChecker FindSelectedDifficulty;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

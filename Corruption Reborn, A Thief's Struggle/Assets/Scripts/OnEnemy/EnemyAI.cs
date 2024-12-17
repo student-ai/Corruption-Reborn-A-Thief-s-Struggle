@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     float hard_chaseSpeed = 15f;
     public GameObject GameManager;
-    public DropdownSelectionChecker difffinder;
+    public GameManagerScript difffinder;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,7 @@ public class EnemyAI : MonoBehaviour
         home = transform.position;
 
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
-        difffinder = Object.FindAnyObjectByType<DropdownSelectionChecker>();
+        difffinder = Object.FindAnyObjectByType<GameManagerScript>();
     }
 
     // Update is called once per frame

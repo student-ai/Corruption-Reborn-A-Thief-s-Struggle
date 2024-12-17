@@ -9,7 +9,7 @@ public class DropdownSelectionChecker : MonoBehaviour
     [SerializeField]
     private TMP_Dropdown dropdown; 
 
-    public int difficulty = 0;
+    public int difficulty;
     void Start()
     {
         // Ensure the dropdown is assigned
@@ -43,8 +43,7 @@ public class DropdownSelectionChecker : MonoBehaviour
         else if (selectedIndex == 2)
         {
             difficulty = 2;
-        }    
-
+        }
     }
 
     private void OnDestroy()

@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     /// </summary>
     float maxHealth;
     public GameObject GameManager;
-    public DropdownSelectionChecker difffinder;
+    public GameManagerScript difffinder;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
         ///healthBar.fillAmount = health / maxHealth;
         ///
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
-        difffinder = Object.FindAnyObjectByType<DropdownSelectionChecker>();
+        difffinder = Object.FindAnyObjectByType<GameManagerScript>();
 
         if (difffinder.difficulty == 0)
         {
