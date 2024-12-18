@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
-    float health = 10;
+    public float health = 10;
     [SerializeField]
     string levelToLoad;
     float maxHealth;
@@ -50,11 +50,6 @@ public class PlayerHealth : MonoBehaviour
             //health--;
             // consequences for taking damage
             //IF we take damage so health is below 0, reload level
-            if (health <= 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                //SceneManager.LoadScene(levelToLoad);
-            }
         }
     }
 
@@ -68,12 +63,6 @@ public class PlayerHealth : MonoBehaviour
             ///healthBar.fillAmount = health / maxHealth;
             
         }
-
-        if (health <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            //SceneManager.LoadScene(levelToLoad);
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -83,11 +72,6 @@ public class PlayerHealth : MonoBehaviour
 
             ///healthBar.fillAmount = health / maxHealth;
             
-        }
-        if (health <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            //SceneManager.LoadScene(levelToLoad);
         }
     }
 }
