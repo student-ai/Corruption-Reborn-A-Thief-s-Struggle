@@ -13,8 +13,8 @@ public class Enemy_Anim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xvelo = GetComponent<Rigidbody2D>().velocity.x;
-        float yvelo = GetComponent<Rigidbody2D>().velocity.y; 
+        float xvelo = GetComponent<Rigidbody2D>().linearVelocity.x;
+        float yvelo = GetComponent<Rigidbody2D>().linearVelocity.y; 
         GetComponent<Animator>().SetFloat("x", xvelo);
         GetComponent<Animator>().SetFloat("y", yvelo);
     }
